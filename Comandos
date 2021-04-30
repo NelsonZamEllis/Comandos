@@ -172,6 +172,24 @@ npm uninstall json-server //Para eliminar un paquete completamente
 
 npm uninstall webpack --no-save //Para eliminar un paquete de nuestro proyecto sin eliminarlo de nuestro archivo package.json
 
+npm cache clean --force //Para borrar el cache de npm
+
+npm cache verify //Para verificar el cache de npm
+
+rm -rf node_modules //Para borrar la carpeta de node
+
+sudo npm install -g rimraf //Para instalar una libreria que me permite borrar la carpeta de node_modules en windows
+
+rimraf node_modules //Para borrar la carpeta de node en windows 
+
+npm audit //Para auditar los paquetes de nuestro proyecto
+
+npm audit --json //Para auditar los paquetes de nuestro proyecto en formato Json
+
+npm update eslint-utils --depth 2 //Para actualizar el paquete y sus dependencias
+
+npm audit fix //Para actualizar todos los paquetes que presentan vulnerabilidades y tambien sus dependencias
+
 sudo cp -r node/{bin,include,lib,share} /usr/ //Para instalar node.js (Primero descargamos el instalador de node.js, extraemos el archivo tar.xz, renombramos la carpeta con el nombre "node" y ejecutamos )
 
 //Herramientas de consola
