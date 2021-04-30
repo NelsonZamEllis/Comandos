@@ -1,0 +1,201 @@
+//Consola Linux
+
+mkdir //Para crear una carpeta
+
+cd //Para moverme entre carpetas
+
+touch //Para crear un archivo
+
+pwd //Para saber en que ruta te encuentras
+
+cd .. //Para moverte al directorio anterior
+
+sudo apt-get update //Para actualizar la lista de paquetes de linux
+
+sudo apt-get upgrade //Para instalar la lista de paquetes de linux
+
+sudo apt-get install nombredeprograma //Para instalar un programa
+
+curl https://xkcd.com/info.0.json | jq // Para ver la respuesta de la solicitud http, (jq) nos permite en este caso ver mucho mejor el json que recibimos como respuesta
+
+curl http://localhost:8000 -v o curl http://localhost:8000?resource_type=books -v //Para realizar una consulta http
+
+curl http://localhost:8000?resource_type=books -v > /dev/null //Para ver la comunicacion a traves de los encabezados
+
+curl -X 'POST' http://localhost:8000/books -d '{"titulo": "Nuevo libro", "id_autor": 1, "id_genero": 2}' //Ejemplo de metodo POST
+
+curl -X 'POST' http://localhost:8000/books -d '{"titulo": "Nuevo libro", "id_autor": 1, "id_genero": 2}' //Ejemplo de metodo PUT
+
+curl -X 'POST' http://localhost:8000/books -d '{"titulo": "Nuevo libro", "id_autor": 1, "id_genero": 2}' //Ejemplo de metodo DELETE
+
+//Apache
+
+sudo /etc/init.d/apache2 stop //Detener Apache
+
+//MySql
+
+sudo service mysql stop //Detener mysql
+
+//Xampp
+
+sudo /opt/lampp/xampp restart //Reiniciar xampp
+
+sudo /opt/lampp/xampp start //Iniciar xampp
+
+sudo /opt/lampp/xampp stop //Detener xampp
+
+//Git
+
+git push origin master //Subir cambios a Git
+
+git commit -am "Comentario" //Hacer un commit
+
+git add -A //Agrgar archivos al repositorio
+
+git log //Para ver los commits creados
+
+//Artisan
+
+php artisan //Muestra todos los comandos que se pueden utilizar
+
+php artisan serve //Para iniciar servidor
+
+php artisan make:controller NombredeControlador --resource //Para crear un controlador con sus 7 metodos.
+
+php artisan make:controller NombredeControlador //Para crear solo el controlador
+
+php artisan make:controller PageController --resource --model=Page // Para crear un controlador con sus 7 metodos y su modelo
+
+php artisan route:list //Muestra todas las rutas configuradas con su controllador
+
+php artisan make:model Post -m -f //Crea un modelo junto a su migracion y su archivo de factory
+
+php artisan make:model -m Nombre //Para crear un nuevo modelo que sirve para declarar las variables y la tabla de nuestra base de datos y su migracion
+
+php artisan make:model Models/Nombre // Para crear un modelo dentro de la carpeta Models
+
+php artisan make:migration nombredelamigracion --table=Nombredelatabla //Crea una migracion
+
+php artisan migrate //Ejecuta las migraciones pendientes
+
+php artisan migrate:rollback //Nos permite regresar un paso atras
+
+php artisan migrate:fresh //Hace un rollback y vuelve a ejutar las migraciones
+
+php artisan migrate:refresh --seed //Para volver ejecutar las migraciones junto a los archivos de prueba
+
+php artisan tinker //Entorno de pruebas para ver cómo funcionan las cosas que estamos haciendo. Tiene en cuenta variables de entorno, lo que inicializa Laravel y también sabe que estamos usando Eloquent.
+
+php artisan make:mail SummaryReport //Crea una clase de email
+
+php  artisan config:cache //Para borrar cache
+
+php artisan ui vue --auth //Para instalar la libreria de autentificacion de node.js(Tienes que tener instalado "composer require laravel/ui --dev", luego ejecutar "php artisan ui bootstrap --auth" si queremos implementar los estilos de bootstrap y luego: "npm install && npm run dev")
+
+php artisan ui:auth //Paso final para instalar el servicio de autentificacion 
+
+php artisan make:request nombredearchivoejemploPostRequest //Para crear un archivo donde tenga la validacion
+
+php artisan make:model Post -mfc //Para crear un modelo con la migracion, el factory y el controlador.
+
+php artisan make:request PostRequest //Para trabajar con validaciones
+
+php artisan storage:link //Para poder trabajar con la carpeta de storage, donde dentro estan las imagenes.
+
+//Composer
+
+composer create-project --prefer-dist laravel/laravel nombredelproyecto // Para crear un proyecto de laravel
+
+composer require laravel/ui --dev //Para añadir una libreria de autentificacion
+
+//Tinker
+
+App\ExpenseReport::first()->expenses; //Ejemplo para ver las relaciones de dos tablas
+
+App\Expense::first(); //Para ver el contenido de una tabla (First= Me muestra el primer resultado o contenido de la tabla)
+
+DB::connection()->getPdo(); // Para probar tu conexion con la base de datos
+
+factory(App\User::class, 12)->create() //Para crear 12 usuarios de prueba
+
+factory(App\Post::class, 30)->create() //Otro ejemplo para crear automaticamente 30 posts
+
+//node.js y npm
+
+node -v //Para ver la version de node
+
+npm -v //Para ver la version de npm
+
+sudo npm install -g npm@latest //Para actualizar la ultima version de npm en el entorno global de la maquina 
+
+npm set init.author.email "nelson_905@hotmail.com" //Para dejar configurado en tu maquina tu correo para todos los proyectos en npm
+
+npm set init.author.name "Nelson Zambrano" //Para dejar configurado en tu maquina tu nombre para todos los proyectos en npm
+
+npm set init.license "MIT" 
+
+npm init -y //Para iniciar npm de forma rapida con las configuraciones pre-establecidas
+
+npm install moment --save //Es un ejemplo de una instalacion de la dependencia moment que con el comando (--save) le decimos que dicha dependencia es necesaria para mi aplicacion en produccion
+
+npm install moment --save-dev //Es un ejemplo de una instalacion de la dependencia moment que con el comando (--save-dev) le decimos que dicha dependencia es necesaria para mi aplicacion solo en mi entorno local del proyecto
+
+npm i date-fns -D //Es la abreviatura de npm install date-fns --save-dev
+
+npm i date-fns -S //Es la abreviatura de npm install date-fns --save
+
+sudo npm install -g nodemon //Para instalar una depencias en el entorno global
+
+npm list -g --depth 0 //Para obtener la lista de todas las dependencias o recursos que tengo instalados de forma global en npm
+
+npm install eslint -O //Para instalar dependencias opcionales en nuestro proyecto
+
+npm install react --dry-run //Para simular que se instala una dependencia, no se instala en nuestro proyecto
+
+npm install webpack -f //Para forzar una instalacion
+
+npm install //Para instalar todas las dependencias que requiere mi proyecto, basandose en el package.json
+
+npm install json-server@0.15.0 //Para instalar una version especifica de una dependencia
+
+npm list //Para ver la lista de los paquetes instalados en mi proyecto
+
+npm outdate //Nos muestra los paquetes que estan desactualizados
+
+npm outdate --dd //Nos muestra los paquetes que estan desactualizados con un poco mas de detalle
+
+npm update //Nos muestra los paquetes que esten desactualizados
+
+npm install json-server@latest //Para actualizar a la ultima version de este paquete
+
+npm uninstall json-server //Para eliminar un paquete completamente
+
+npm uninstall webpack --no-save //Para eliminar un paquete de nuestro proyecto sin eliminarlo de nuestro archivo package.json
+
+sudo cp -r node/{bin,include,lib,share} /usr/ //Para instalar node.js (Primero descargamos el instalador de node.js, extraemos el archivo tar.xz, renombramos la carpeta con el nombre "node" y ejecutamos )
+
+//Herramientas de consola
+
+sudo apt-get install jq //Para ver ordenado un json
+
+//Vim
+
+vim archivo.php //Para crear un archivo y abrir el vim
+
+i //Para editar en vim
+
+:w //Para guardar
+
+:exit() //Para salir
+
+:X //Guarda y sale
+
+//PHP
+
+php archivo.php //Para ejecutar un archivo PHP
+
+php archivo.php | jq  //Para ejecutar un archivo PHP
+
+php -S localhost:8000 nombre.php //Para iniciar el servidor que trae PHP por defecto
+
+ 
