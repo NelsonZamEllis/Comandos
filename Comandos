@@ -190,6 +190,21 @@ npm update eslint-utils --depth 2 //Para actualizar el paquete y sus dependencia
 
 npm audit fix //Para actualizar todos los paquetes que presentan vulnerabilidades y tambien sus dependencias
 
+npm link //Para subir mi paquete creado, a la lista de repositorios de mi maquina
+
+sudo npm install -g <ruta de mi paquete a instalar> //Sirve para instalar o actualizar un paquete desde mi maquina
+
+npm adduser //Para registrarte en npm
+
+npm publish //Para publicar mi paquete
+
+npm version patch //Para cambiar la version al paquete, en caso de ser un parche
+
+npm version minor //Para cambiar la version al paquete, en caso de ser un cambio menor
+
+npm version major //Para cambiar la version al paquete, en caso de ser un cambio mayor
+
+
 sudo cp -r node/{bin,include,lib,share} /usr/ //Para instalar node.js (Primero descargamos el instalador de node.js, extraemos el archivo tar.xz, renombramos la carpeta con el nombre "node" y ejecutamos )
 
 //Herramientas de consola
